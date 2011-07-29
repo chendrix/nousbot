@@ -2,7 +2,7 @@ Plugin = require "../lib/plugin"
 
 info =
     name: "google"
-    trigger: "google"
+    trigger: ["google", "g"]
     doc: "'google <query>' -- returns a result for the given query"
 
 googleurl = (service, query) ->

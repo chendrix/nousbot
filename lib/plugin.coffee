@@ -6,10 +6,8 @@ module.exports = class Plugin
     matchTrigger: (env, trigger) ->
         trigger ?= @info.trigger
 
-        # the info object must contain a trigger attribute for this to be used
-        if trigger?
-            # fancy ass regex, captures matched input and possibly @user
-            pattern = new RegExp "^\\#{nous.config.leader}#{trigger}\\s(.*?)\\s?(@.*)?$", "i"
+        tryMatch = (trig) ->
+            pattern = new RegExp "^\\#{nous.config.leader}#{trig}\\s(.*?)\\s?(@.*)?$", "i"
             matches = env.message.match pattern
             if matches?[1]?
                 if matches?[2]?
@@ -18,6 +16,18 @@ module.exports = class Plugin
                     # if we find an @user match, set the environment user to this user
                     env.from = user
                 return matches[1]
+            null
+
+        # the info object must contain a trigger attribute for this to be used
+        if trigger?
+            if trigger instanceof Array
+                for t in trigger
+                    results = tryMatch t
+                    return results if results?
+            else
+                results = tryMatch trigger
+                return results if results?
+        return
 
     # Takes an environment and checks if the message was only this plugins trigger
     triggerOnly: (env, trigger) ->

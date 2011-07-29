@@ -2,10 +2,10 @@ nous v2, rewriiiiteeee
 
 current deps:
   node.js
-  redis
+  redis (optional)
   coffee-script
   npm install irc
   npm install coffee-script
   npm install node.io
   npm install xml2js
-  npm install redis
+  npm install redis (optional)

@@ -79,7 +79,11 @@ module.exports = class Bot extends EventEmitter
                             @errorHandler err
 
     errorHandler: (err) =>
-        console.log "ERROR: #{err}"
+        if err.command?
+            response = "#{err.command} -- #{err.args.join ' '}"
+        else
+            response = err
+        console.log "ERROR: #{response}"
 
     rawHandler: (message) =>
         console.log "RAW: #{message.command} #{message.args.join ' '}"
