@@ -23,3 +23,4 @@ module.exports =
     apikeys:
         somekey: "someval"
         # lastfm: "" # uncomment and fill in key to enable plugin
+				# wolframalpha: "" # uncomment and fill in key to enable plugin
