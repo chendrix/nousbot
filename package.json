@@ -20,5 +20,6 @@
     , "xml2js"        : ">=0.1.9"
     , "redis"         : ">=0.6.7"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "contributors": ["Christopher Hendrix <chris@material-designer.com> (http://material-designer.com)"]
 }
