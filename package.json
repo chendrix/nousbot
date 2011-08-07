@@ -3,7 +3,7 @@
   "name": "nousbot",
   "description": "simple, extensible irc bot written in coffeescript",
   "keywords": ["irc", "bot"],
-  "version": "2.0.1",
+  "version": "0.2.1",
   "homepage": "https://github.com/eggsby/nousbot",
   "repository": {
     "type": "git",

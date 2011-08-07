@@ -17,19 +17,20 @@ nous v2, rewriiiiteeee
 # Plugins
 * ACL
 * Bitcoin
-* Calculator
-* Choose
-* Dictionary
+* Calculator (by jszwedko)
+* Choose (by jszwedko
+* Dictionary (by jszwedko)
 * Google
 * Help
 * LastFm
 * Stock
 * Storage
-* Tags
+* Tags (by jszwedko)
 * Timer
-* Weather
-* Wikipedia
+* Weather (by eggsby & jszwedko)
+* Wikipedia (by jszwedko)
 * WolframAlpha (by chendrix)
 
 # Contributors
 * [Christopher Hendrix](http://github.com/chendrix)
+* [Jesse Szwedko](https://github.com/jszwedko)
