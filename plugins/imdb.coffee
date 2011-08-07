@@ -10,14 +10,17 @@ imdb = (env) ->
   if match?
     splitMatch = match.split " "
     potentialYear = splitMatch[splitMatch.length - 1]
+    year = ""
     
+    # If the message matches a 4 digit year on the end, make that the year and the message
+    # query is the rest of the message
     if potentialYear.match /^d{4}$/ 
       year = potentialYear 
       splitMatch.pop()
       match = splitMatch.join " "
       
     url = """
-          http://http://www.imdbapi.com/?r=JSON
+          http://www.imdbapi.com/?r=JSON
           &t=#{encodeURIComponent match}
           &y=#{encodeURIComponent year}
           """
@@ -29,19 +32,18 @@ imdb = (env) ->
       if err
         @say env, "Sorry, there was an error scraping the API, but you can try visiting #{urlecho}"
       else
-        response = @xml data if data
-        if response?['@']?.success is 'true'
-          if response?.pod?.subpod?.plaintext?
-            calculation = response.pod.subpod.plaintext 
-            @say env, "#{env.from}: #{calculation}"
-          else
-            @say env, "Sorry, couldn't calculate '#{match}' in plaintext, but you can visit #{urlecho}"
+        response = JSON.parse data if data
+        if response.Response is "True"
+          imdburl = "http://www.imdb.com/title/#{response.ID}"
+          message = "#{env.from}: #{response.Title} (#{response.Year}) (#{response.Genre}), Rated #{response.Rated}: #{response.Plot} - #{imdburl}"
+          @say env, message
+        else if response.Response is "Movie Not Found"
+          @say env, "Sorry, that movie could not be found, but you can try visiting #{urlecho}"
         else
-          @say env, "Sorry, that query failed, but you can try visiting #{urlecho}"
+          @say env, "Sorry, there was an error scraping the API, but you can try visiting #{urlecho}"
+          
 
-if nous?.config?.apikeys?.wolframalpha?
-    module.exports = {
-        wolframalpha: new Plugin info, wa
-    }
-else
-    console.log "No apikey set for wolframalpha, not enabling wolframalpha plugin."      
+module.exports = 
+ imdb: new Plugin info, imdb
+
+
