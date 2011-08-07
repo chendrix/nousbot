@@ -22,6 +22,7 @@ nous v2, rewriiiiteeee
 * Dictionary (by jszwedko)
 * Google
 * Help
+* IMDB (by chendrix)
 * LastFm
 * Stock
 * Storage
