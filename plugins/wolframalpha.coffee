@@ -7,7 +7,6 @@ info =
   
 wa = (env) ->
   match = @matchTrigger env
-  console.log match
   if match?
     url = """
           http://api.wolframalpha.com/v2/query?appid=#{nous.config.apikeys.wolframalpha}
