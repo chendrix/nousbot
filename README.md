@@ -21,6 +21,7 @@ nous v2, rewriiiiteeee
 * Choose (by jszwedko
 * Dictionary (by jszwedko)
 * Google
+* Google Images (by chendrix)
 * Help
 * IMDB (by chendrix)
 * LastFm
