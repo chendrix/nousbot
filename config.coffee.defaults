@@ -24,3 +24,4 @@ module.exports =
         somekey: "someval"
         # lastfm: "" # uncomment and fill in key to enable plugin
 				# wolframalpha: "" # uncomment and fill in key to enable plugin
+				# youtube: "" # OPTIONAL uncomment and fill in key
