@@ -32,6 +32,7 @@ nous v2, rewriiiiteeee
 * Weather (by eggsby & jszwedko)
 * Wikipedia (by jszwedko)
 * WolframAlpha (by chendrix)
+* Youtube (by chendrix)
 
 # Contributors
 * [Christopher Hendrix](http://github.com/chendrix)
